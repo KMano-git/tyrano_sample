@@ -119,7 +119,7 @@ f.post+=1
 *1stmatch
 [cm ]
 [position left="10" top="450" width="1260" height="266"  frame="none" ]
-「よし、早速他の人と差をつけてやる!!」
+「よし、早速他の人と差をつけてやる!!」[p]
 
 [bg storage="juniorhighschool.jpg" time="200" ]
 
@@ -169,7 +169,7 @@ f.shoot+=2
 同級生のゴローが1on1を挑んできた。[l][r]
 [link target="*1on1" ]→挑戦を受ける[endlink][r]
 [link target="*practice" ]→一人で自主練する[endlink][r][s]
-[chara_hide name="player1" ]
+
 
 *1on1
 [cm]
@@ -183,6 +183,7 @@ f.shoot+=2
 [cm]
 あなたは、ドリブルでなんとかゴローを抜き去ろうとし、
 成功したり失敗したりを繰り返しながらゴローと練習した。[p]
+[chara_hide name="player1" ]
 [iscript]
 f.drive+=5
 f.defence+=5
@@ -190,8 +191,10 @@ f.defence+=5
 [jump target="*match" ]
 
 *shoot2
+[cm]
 あなたは、ゴローが下がったときを見計らって
 シュートを積極的に狙いながらゴローと練習した。[p]
+[chara_hide name="player1" ]
 [iscript]
 f.shoot+=5
 f.defence+=5
@@ -200,6 +203,7 @@ f.defence+=5
 
 *practice
 [cm]
+[chara_hide name="player1" ]
 一人で、ハンドリング練習やシュート練習を黙々と行った。[p]
 [iscript]
 f.drive+=4
