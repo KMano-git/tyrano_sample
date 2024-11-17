@@ -41,6 +41,8 @@
 
 東京第一中学校に入学した！！[r]
 あなたはこれからプロバスケットボール選手をめざして練習を重ねていくことになります。[p]
+[chara_new name="teacher" storage="teacher.png" height="520" ]
+[chara_show name="teacher" ]
 やあ、[emb exp="f.player_name"]くんだね！[r]
 私はこの学校のバスケ部の顧問です。[p]
 話は聞いているよ。うちのバスケ部に入りたいんだよね。うちは誰でも歓迎しているよ。[r]
@@ -55,9 +57,60 @@ f.defence= 0
 [endscript]
 
 [bg storage="gym.jpg" ]
-~放課後~
+~放課後~[p]
+[chara_show name="teacher" ]
+早速だが、新入生の君たちにはうちの練習の見学から始めさせてもらう。[r]
+明日からは基礎練を中心に始めていくので今日中にどんな雰囲気化を確認しておくこと。[p]
+どうやら明日から練習が始まるみたいだ。
+[r][l]
+[iscript]
+f.drive+=1 
+f.pass= 1
+f.shoot= 1
+f.post= 1
+f.defence= 1
+[endscript]
+明日からはなにを重視して練習しようか
+[link target="*drive" ]→ドリブル[endlink][r]
+[link target="*pass" ]→パス[endlink][r]
+[link target="*shoot"]→シュート[endlink][r]
+[link target="*post"]→ポストプレイ[endlink][r]
+[link target="*defence"]→ディフェンス[endlink][r]
+[s]
 
-[l]
+*drive
+[iscript]
+f.drive+=5
+f.post+=1
+[endscript]
+[jump target="*1stmatch" ]
+*pass
+[iscript]
+f.pass+=5
+f.shoot+=1
+[endscript]
+[jump target="*1stmatch" ]
+*shoot
+[iscript]
+f.shoot+=5
+f.pass+=1
+[endscript]
+[jump target="*1stmatch" ]
+*post
+[iscript]
+f.post+=5
+f.defence+=1
+[endscript]
+[jump target="*1stmatch" ]
+*defence
+[iscript]
+f.defence+=5
+f.post+=1
+[endscript]
+[jump target="*1stmatch" ]
+
+*1stmatch
+
 
 [jump target=*highschool]
 
@@ -115,28 +168,29 @@ f.defence= 0
 [jump target=*highschool]
 
 *highschool
+;　ここでエンディング入りで妥協かな
 [cm]
-高校に進学した！！
+あなたは〇〇高校に進学した！！あなたのバスケットボーラーの旅はまだまだ続く！！
 [l][r]
 
-[link target="*college"]→アメリカの大学に進学する[endlink][r]
-[link target="*japan" ]→日本でプレイを続ける[endlink][r]
-[s]
+;[link target="*college"]→アメリカの大学に進学する[endlink][r]
+;[link target="*japan" ]→日本でプレイを続ける[endlink][r]
+;[s]
 
-*college
-[cm]
-[link target="*NBA" ]→NBAドラフトに選ばれた！！[endlink][r]
-[link target="*Gleage" ]→Gリーグに呼ばれた[endlink][r]
-[s]
-*japan
+;*college
+;[cm]
+;[link target="*NBA" ]→NBAドラフトに選ばれた！！[endlink][r]
+;[link target="*Gleage" ]→Gリーグに呼ばれた[endlink][r]
+;[s]
+;*japan
 
-[link target="*camp" ]
+;[link target="*camp" ]
 
 
-*NBA
+;*NBA
 
-*Gleage
+;*Gleage
 
-*camp
+;*camp
 
 [jump target=*start]
